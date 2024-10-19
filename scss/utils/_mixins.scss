@@ -1,6 +1,6 @@
 @mixin respond-to($device) {
   @if $device == desktop {
-    @media (min-width: $desktop) {
+    @media (max-width: $desktop) {
       @content;
     }
   } @else if $device == tablet {

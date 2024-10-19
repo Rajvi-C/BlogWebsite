@@ -9,8 +9,9 @@
   text-align: center;
   border: 2px solid $dark-gray;
   transition: border-color 0.3s ease;
-  width: 400px;
-  height: 350px;
+  width: 100%; // Make width responsive
+  max-width: 400px; // Maintain max width
+  height: 350px; // Fixed height to maintain consistency
   overflow: hidden;
 
   h3 {
@@ -44,5 +45,9 @@
 
   &:hover {
     border-color: $primary-color;
+  }
+
+  @include respond-to(tablet) {
+    height: auto;
   }
 }

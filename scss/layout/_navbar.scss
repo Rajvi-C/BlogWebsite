@@ -1,12 +1,11 @@
 .navbar {
   background-color: $dark-gray;
   padding: 0 0;
+
   .navbar-container {
     padding: 20px;
     margin: 0 auto;
-
     width: 100%;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,9 +27,26 @@
           font-size: $font-size-base;
 
           &:hover {
-            color: $accent-color;
+            color: $primary-color;
           }
         }
+      }
+    }
+  }
+
+  // Responsive styles
+  @include respond-to(tablet) {
+    .navbar-container {
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      .navbar-menu {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   }

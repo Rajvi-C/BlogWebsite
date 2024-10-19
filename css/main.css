@@ -18,7 +18,7 @@
   background-color: #f4a261;
   color: #ffffff;
   text-align: center;
-  margin: 20px 20px;
+  margin: 20px;
 }
 .main-grid .hero h2 {
   font-size: 2.5rem;
@@ -42,14 +42,17 @@
 .main-grid .latest-posts .posts-grid {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .main-grid .latest-posts .posts-grid .card {
   background-color: #ffffff;
+  border: 1px solid #264653;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
+  flex: 1;
+  margin: 0 10px;
 }
 .main-grid .latest-posts .posts-grid .card img {
   max-width: 100%;
@@ -75,6 +78,29 @@
 }
 .main-grid .latest-posts .posts-grid .card a:hover {
   color: #1f776d;
+}
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+  .main-grid .latest-posts .posts-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .main-grid .latest-posts .posts-grid .card {
+    margin: 10px;
+    flex: 0 0 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .main-grid .latest-posts .posts-grid {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .main-grid .latest-posts .posts-grid .card {
+    flex: 0 0 calc(50% - 20px);
+    margin: 10px;
+  }
 }
 
 .navbar {
@@ -104,7 +130,20 @@
   font-size: 1rem;
 }
 .navbar .navbar-container .navbar-menu li a:hover {
-  color: #2a9d8f;
+  color: #f4a261;
+}
+@media (max-width: 768px) {
+  .navbar .navbar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar .navbar-container h1 {
+    margin-bottom: 10px;
+  }
+  .navbar .navbar-container .navbar-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .footer {
@@ -132,7 +171,8 @@
   text-align: center;
   border: 2px solid #264653;
   transition: border-color 0.3s ease;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 350px;
   overflow: hidden;
 }
@@ -163,6 +203,11 @@
 }
 .card:hover {
   border-color: #f4a261;
+}
+@media (max-width: 768px) {
+  .card {
+    height: auto;
+  }
 }
 
 .cta-button {

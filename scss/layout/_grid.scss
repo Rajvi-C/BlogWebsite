@@ -13,7 +13,7 @@
     background-color: $primary-color;
     color: $light-text;
     text-align: center;
-    margin: 20px 20px;
+    margin: 20px;
 
     h2 {
       font-size: $font-size-large;
@@ -41,14 +41,17 @@
     .posts-grid {
       display: flex;
       flex-wrap: nowrap;
-      justify-content: space-around;
+      justify-content: space-between;
 
       .card {
         background-color: $white;
+        border: 1px solid $dark-gray; // Add border color
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         padding: 20px;
         text-align: center;
+        flex: 1; // Make cards grow to fill space
+        margin: 0 10px; // Add horizontal margin for spacing
 
         img {
           max-width: 100%;
@@ -77,6 +80,33 @@
           &:hover {
             color: $dark-accent;
           }
+        }
+      }
+    }
+  }
+
+  // Responsive styles
+  @include respond-to(tablet) {
+    .posts-grid {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .card {
+        margin: 10px;
+        flex: 0 0 90%;
+      }
+    }
+  }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    .latest-posts {
+      .posts-grid {
+        flex-wrap: wrap; // Allow cards to wrap
+        justify-content: space-around; // Distribute cards evenly
+
+        .card {
+          flex: 0 0 calc(50% - 20px); // Make cards take 50% of the width with some space
+          margin: 10px; // Add margin between cards
         }
       }
     }
