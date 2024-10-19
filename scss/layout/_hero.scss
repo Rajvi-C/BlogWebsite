@@ -1,0 +1,30 @@
+.hero {
+  display: grid;
+  place-items: center;
+  background-color: $light-gray;
+  color: $dark-text;
+  padding: 60px;
+  text-align: center;
+
+  h1 {
+    font-size: $font-size-large;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: $font-size-base;
+    max-width: 800px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: $accent-color;
+    border: none;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+  }
+}
