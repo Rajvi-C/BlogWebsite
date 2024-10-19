@@ -1,13 +1,15 @@
 @import "themes/variables";
+@import "utils/mixins";
+@import "utils/functions";
+@import "utils/placeholders";
 @import "base/reset";
 @import "layout/grid";
 @import "layout/navbar";
 @import "layout/footer";
+@import "layout/categories";
+@import "layout/about";
 @import "components/cards";
 @import "components/button";
-@import "utils/mixins";
-@import "utils/functions";
-@import "utils/placeholders";
 
 html,
 body {

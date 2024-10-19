@@ -80,14 +80,11 @@
   color: #1f776d;
 }
 @media (max-width: 768px) {
-  .main-grid {
-    grid-template-columns: 1fr;
-  }
-  .main-grid .latest-posts .posts-grid {
+  .main-grid .posts-grid {
     flex-wrap: wrap;
     justify-content: center;
   }
-  .main-grid .latest-posts .posts-grid .card {
+  .main-grid .posts-grid .card {
     margin: 10px;
     flex: 0 0 90%;
   }
@@ -160,6 +157,87 @@
   font-size: 0.875rem;
 }
 
+.categories .categories-grid .category-card {
+  flex: 1;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.categories .categories-grid .category-card img {
+  width: 100%;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.categories .categories-grid .category-card .category-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.categories .categories-grid .category-card:hover .category-name {
+  opacity: 1;
+}
+
+.categories {
+  padding: 40px 20px;
+}
+.categories .categories-title {
+  color: #264653;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.categories .categories-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.categories .categories-grid .category-card .category-description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 10px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .categories .categories-grid {
+    flex-wrap: wrap;
+  }
+}
+
+.about-blog {
+  padding: 40px 20px;
+  background-color: #f4a261;
+  border-radius: 8px;
+  margin: 20px;
+}
+.about-blog .about-title {
+  font-size: 2.5rem;
+  color: #264653;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.about-blog p {
+  color: white;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+.about-blog h3 {
+  color: #e9c46a;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -185,7 +263,7 @@
   color: #f4a261;
 }
 .card p {
-  font-size: 0.875rem;
+  font-size: 14px;
   color: #333333;
   flex-grow: 1;
   overflow: hidden;

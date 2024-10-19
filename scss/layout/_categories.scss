@@ -1,0 +1,82 @@
+// Define variables for colors and sizes
+$category-bg-color: #f9f9f9;
+$category-hover-color: rgba(0, 0, 0, 0.7);
+$description-color: #666;
+$font-size-base: 16px;
+$font-size-small: 14px;
+
+// Mixin for text styles
+@mixin text-style($color, $size) {
+  color: $color;
+  font-size: $size;
+  line-height: 1.5;
+}
+
+// Placeholder for category card styles
+%category-card {
+  flex: 1;
+  background-color: $category-bg-color;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .category-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: $category-hover-color;
+    color: $white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    .category-name {
+      opacity: 1;
+    }
+  }
+}
+
+// Category section styles
+.categories {
+  padding: 40px 20px;
+
+  .categories-title {
+    @include text-style($dark-gray, $font-size-large);
+    margin-bottom: 20px;
+  }
+
+  .categories-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 20px;
+
+    .category-card {
+      @extend %category-card; // Extend placeholder for card styles
+
+      .category-description {
+        @include text-style($description-color, $font-size-small);
+        padding: 10px;
+        text-align: center;
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: $tablet) {
+    .categories-grid {
+      flex-wrap: wrap;
+    }
+  }
+}
